@@ -9,10 +9,13 @@ namespace Infraestructure.API.Context
         {
         }
 
-        public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<Colaborador> Colaborador { get; set; }
         public DbSet<Direccion> Direccion { get; set; }
         public DbSet<Emprendimiento> Emprendimiento { get; set; }
         public DbSet<Inversor> Inversor { get; set; }
+        public DbSet<Ofertas> Ofertas { get; set; }
         public DbSet<Rol> Rol { get; set; }
+        public DbSet<TipoIdentificacion> TipoIdentificacion { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
     }
 }
