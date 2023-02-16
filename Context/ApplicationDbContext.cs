@@ -10,7 +10,7 @@ namespace Infraestructure.API.Context
         }
 
         public DbSet<Colaborador> Colaborador { get; set; }
-        public DbSet<Direccion> Direccion { get; set; }
+        public DbSet<Ciudad> Ciudad { get; set; }
         public DbSet<Emprendimiento> Emprendimiento { get; set; }
         public DbSet<Inversor> Inversor { get; set; }
         public DbSet<Ofertas> Ofertas { get; set; }

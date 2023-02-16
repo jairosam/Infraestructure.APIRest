@@ -2,17 +2,12 @@
 
 namespace Infraestructure.API.Models
 {
-    public class Emprendimiento
+    public class Estado
     {
         [Key]
         public int id { get; set; }
         [Required]
-        [StringLength(50)]
-        public string nombre { get; set; }
-        public int objetivo { get; set; } 
-
-        public List<Colaborador> colaboradores { get; set; }
+        public string estado { get; set; }
         public List<Ofertas> ofertas { get; set; }
-
     }
 }
