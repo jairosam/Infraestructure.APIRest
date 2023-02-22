@@ -19,6 +19,9 @@ namespace Infraestructure.API.Models
         
         [ForeignKey("Rol")]
         public int fkRol { get; set; }
-        public Rol rol { get; set; }
+        public Rol Rol { get; set; }
+
+        public Inversor Inversor { get; set; }
+        public List<Emprendimiento> Emprendimientos { get; set; } 
     }
 }

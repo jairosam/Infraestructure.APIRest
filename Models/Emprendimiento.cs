@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Infraestructure.API.Models
 {
@@ -9,7 +10,11 @@ namespace Infraestructure.API.Models
         [Required]
         [StringLength(50)]
         public string nombre { get; set; }
-        public int objetivo { get; set; } 
+        public int objetivo { get; set; }
+
+        [ForeignKey("Usuario")]
+        public int fkUsuario { get; set; }
+        public Usuario Usuario { get; set; }
 
         public List<Colaborador> colaboradores { get; set; }
         public List<Ofertas> ofertas { get; set; }
