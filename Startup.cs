@@ -1,4 +1,8 @@
-﻿namespace Infraestructure.API
+﻿using Infraestructure.API.Context;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
+
+namespace Infraestructure.API
 {
     public class Startup
     {
@@ -15,8 +19,18 @@
 
             services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
             services.AddEndpointsApiExplorer();
-            services.AddSwaggerGen();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "API Proyecto", Version = "v1" });
+            });
+
+            services.AddCors(x => x.AddPolicy(name: "AllowWebApp",
+                policy =>
+                {
+                    policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                }));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
