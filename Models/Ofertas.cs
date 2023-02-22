@@ -22,5 +22,8 @@ namespace Infraestructure.API.Models
         [ForeignKey("Estado")]
         public int fkEstado { get; set; }
         public Estado estado { get; set; }
+        [ForeignKey("TipoOferta")]
+        public int fkTipoOferta { get; set; }
+        public TipoOferta tipoOferta { get; set; }
     }
 }

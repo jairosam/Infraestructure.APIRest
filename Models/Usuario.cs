@@ -14,6 +14,8 @@ namespace Infraestructure.API.Models
         public string identificacion { get; set; }
         [Required]
         public string telefono { get; set; }
+        [Required]
+        public string fechaNacimiento { get; set; }
         
         [ForeignKey("Rol")]
         public int fkRol { get; set; }

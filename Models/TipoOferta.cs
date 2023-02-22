@@ -2,12 +2,12 @@
 
 namespace Infraestructure.API.Models
 {
-    public class Inversor
+    public class TipoOferta
     {
         [Key]
         public int id { get; set; }
         [Required]
-        public string nombre { get; set; }
-        public List<Tarjeta> Tarjetas { get; set; }
+        public string tipoOferta { get; set; }
+        public List<Ofertas> ofertas { get; set; }
     }
 }
