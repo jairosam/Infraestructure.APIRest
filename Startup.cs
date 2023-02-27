@@ -31,6 +31,8 @@ namespace Infraestructure.API
                 {
                     policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
                 }));
+
+            services.AddAutoMapper(typeof(Startup));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
